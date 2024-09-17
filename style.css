@@ -1,0 +1,129 @@
+body {
+  margin: 0;
+  padding: 0 20px;
+  box-sizing: border-box;
+  background-color: #2b2e34;
+}
+
+ul {
+  li {
+    list-style-type: none;
+  }
+}
+
+#header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  div {
+    ul {
+      display: none;
+    }
+  }
+}
+
+#main {
+  min-height: 95vh;
+  h1 {
+    color: white;
+    text-align: center;
+    font-size: 35px;
+    font-weight: bold;
+    margin-bottom: 35px;
+  }
+  p {
+    color: rgb(185, 185, 185);
+    text-align: center;
+    font-size: 16px;
+    font-weight: bold;
+  }
+}
+
+#items {
+  display: grid;
+  gap: 70px;
+  margin: 70px 0;
+  .item {
+    background-color: #0d1423;
+    border-radius: 8px;
+    height: 132px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    img {
+      position: absolute;
+      top: -20px;
+      left: 43%;
+    }
+    span {
+      color: rgb(185, 185, 185);
+      font-size: 14px;
+      font-weight: bold;
+    }
+  }
+}
+
+#footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  div {
+    background-image: url(./Assets/back.png);
+    height: 100px;
+    background-position-x: center;
+    background-repeat: no-repeat;
+    background-position-y: bottom;
+    background-size: contain;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  img{
+      height: 151px;
+      width: 391px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  #header {
+    div {
+      img {
+        display: none;
+      }
+      ul {
+        display: flex;
+        li {
+          margin: 0 10px;
+        }
+        li:nth-child(2) {
+          color: #00c2ff;
+        }
+      }
+    }
+  }
+  #items {
+    grid-template-columns: repeat(2, 1fr);
+    .item:first-child {
+      grid-area: 1/1/2/4;
+    }
+  }
+  #footer{
+      div{
+          img{
+              width: 520px;
+              height: 200px;
+          }
+      }
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  #items {
+    grid-template-columns: repeat(3, 1fr);
+    .item:first-child {
+      grid-area: 1/1/2/2;
+    }
+  }
+}
